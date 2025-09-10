@@ -5,13 +5,13 @@ import { getFirestore, doc, getDoc, setDoc, collection, addDoc, serverTimestamp,
 
 // --- Firebase Configuration ---
 const firebaseConfig = {
-    apiKey: "AIzaSyBhIqORdR54uSVX7Uy38IYkNpb5Sg3In8I",
-    authDomain: "star-wars-character-app.firebaseapp.com",
-    projectId: "star-wars-character-app",
-    storageBucket: "star-wars-character-app.firebasestorage.app",
-    messagingSenderId: "223074033822",
-    appId: "1:223074033822:web:ffa2fbb7d6df9b51e85b8f",
-    measurementId: "G-1MMEW0NPCC"
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
 };
 
 // --- Firebase Initialization ---
