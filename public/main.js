@@ -1,7 +1,7 @@
 // Firebase Imports
-import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateEmail, updatePassword } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, collection, addDoc, serverTimestamp, query, orderBy, limit, getDocs, writeBatch, deleteDoc, where } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+import { initializeApp, getApps, getApp } from "";
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateEmail, updatePassword } from "";
+import { getFirestore, doc, getDoc, setDoc, collection, addDoc, serverTimestamp, query, orderBy, limit, getDocs, writeBatch, deleteDoc, where } from "";
 
 // --- Firebase Configuration ---
 const firebaseConfig = {
