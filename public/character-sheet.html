@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Character Sheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-left-actions">
+        <button id="back-to-hub-btn" class="nav-button">&larr; Back to Hub</button>
+    </div>
+    
+    <div class="top-right-actions">
+        <button id="my-account-btn" class="nav-button">My Account</button>
+        <button id="logout-button" class="nav-button logout-button">Log Out</button>
+        <button id="delete-character-btn" class="nav-button delete-button">Delete Character</button>
+    </div>
+
+    <div id="main-content-wrapper">
+        <h1>Star Wars Character Sheet</h1>
+
+        <div id="campaign-info-header" class="campaign-header" style="display: none;">
+            Part of the <a id="campaign-link" href="#"></a> campaign.
+        </div>
+        
+        <section class="save-load-section">
+            <div id="save-load-message"></div>
+        </section>
+
+        <section class="top-info">
+            <div class="character-details-inputs">
+                <label>Character Name:<br><input type="text" id="character-name-input"></label>
+                <label>Species:<br><input type="text" id="species-input" disabled></label>
+                <label>Career:<br><input type="text" id="career-input" disabled></label>
+                <label>Specialization Trees:<br><input type="text" id="specialization-input" disabled></label>
+            </div>
+        </section>
+        
+        <nav class="tabs">
+            <button class="tab-link active" data-tab="tab-skills">Skills & Characteristics</button>
+            <button class="tab-link" data-tab="tab-actions">Actions</button>
+            <button class="tab-link" data-tab="tab-talents">Talents & Injuries</button>
+            <button class="tab-link" data-tab="tab-inventory">Inventory</button>
+            <button class="tab-link" data-tab="tab-details">Character Details</button>
+        </nav>
+
+        <div class="tab-content-wrapper">
+
+            <div id="tab-skills" class="tab-content active">
+                <section class="characteristics">
+                    <h2>Characteristics</h2>
+                    <div class="char-grid">
+                        <div><label>Brawn<br><input type="number" min="1" max="6" id="brawn-char" /></label></div>
+                        <div><label>Agility<br><input type="number" min="1" max="6" id="agility-char" /></label></div>
+                        <div><label>Intellect<br><input type="number" min="1" max="6" id="intellect-char" /></label></div>
+                        <div><label>Cunning<br><input type="number" min="1" max="6" id="cunning-char" /></label></div>
+                        <div><label>Willpower<br><input type="number" min="1" max="6" id="willpower-char" /></label></div>
+                        <div><label>Presence<br><input type="number" min="1" max="6" id="presence-char" /></label></div>
+                    </div>
+                </section>
+                <section class="health-line">
+                    <div class="health-item"><div class="label">Soak Value</div><div class="soak-box"><input type="number" min="0" id="soak-input" disabled/></div></div>
+                    <div class="defense-item"><div class="label">Defense (Melee)</div><div class="defense-box"><input type="number" min="0" id="melee-defense-input" disabled/></div></div>
+                    <div class="defense-item"><div class="label">Defense (Ranged)</div><div class="defense-box"><input type="number" min="0" id="ranged-defense-input" disabled/></div></div>
+                </section>
+                <section class="health-line">
+                    <div class="health-item">
+                        <div class="label">Wounds</div>
+                        <div class="stat-sublabel">Current / Threshold</div>
+                        <div class="split-box">
+                            <input type="text" placeholder="Current" id="wounds-current-input" />
+                            <div class="divider">/</div>
+                            <input type="text" placeholder="Threshold" id="wounds-threshold-input" disabled/>
+                        </div>
+                    </div>
+                    <div class="health-item">
+                        <div class="label">Strain</div>
+                        <div class="stat-sublabel">Current / Threshold</div>
+                        <div class="split-box">
+                            <input type="text" placeholder="Current" id="strain-current-input" />
+                            <div class="divider">/</div>
+                            <input type="text" placeholder="Threshold" id="strain-threshold-input" disabled/>
+                        </div>
+                    </div>
+                </section>
+                <div class="skills-layout">
+                    <div class="skills-left"><h3>General Skills</h3><div id="general-skills-grid" class="skills-grid"></div></div>
+                    <div class="skills-right"><div class="skills-box"><h3>Combat Skills</h3><div id="combat-skills-grid" class="skills-grid"></div></div><div class="skills-box"><h3>Knowledge Skills</h3><div id="knowledge-skills-grid" class="skills-grid"></div></div><div class="skills-box custom"><h3>Custom Skills</h3><div id="custom-skills-grid" class="skills-grid"></div></div></div>
+                </div>
+            </div>
+
+            <div id="tab-actions" class="tab-content">
+                <section class="weapons-section">
+                    <h2>Weapons</h2>
+                    <div class="weapons-table" id="weapons-list">
+                        <div class="weapon-header">
+                            <span>Weapon</span><span>Skill</span><span>Damage</span><span>Crit</span><span>Range</span><span>Special</span><span>Actions</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="talents-section">
+                    <h2>Active Talents</h2>
+                    <div id="active-talents-list">
+                        <p>Activated talents will appear here.</p>
+                    </div>
+                </section>
+            </div>
+
+            <div id="tab-talents" class="tab-content">
+                 <div class="talents-section">
+                    <h2>Specialization Talents</h2>
+                    <div id="talents-list"></div>
+                </div>
+                <div class="talents-section">
+                    <h2>Species & Bonus Talents</h2>
+                    <div id="bonus-talents-list"></div>
+                </div>
+                <section class="talents-section">
+                    <h2>Critical Injuries</h2>
+                    <div id="critical-injuries-list">
+                        <p>No critical injuries sustained.</p>
+                    </div>
+                </section>
+            </div>
+
+            <div id="tab-inventory" class="tab-content">
+                <div class="top-stats-header">
+                    <div class="stat-box"><span class="stat-label">Total / Available XP</span><span class="stat-value"><span id="total-xp-display">0</span> / <span id="available-xp-display">0</span></span></div>
+                    <div class="stat-box"><span class="stat-label">Credits</span><span class="stat-value" id="credits-display">0</span></div>
+                </div>
+                <section class="encumbrance">
+                    <div class="stat-box"><span class="stat-label">Encumbrance</span><div class="stat-value-split"><div class="stat-value-item"><span id="encumbrance-current" class="stat-value">0</span><span class="stat-sublabel">Current</span></div><span class="stat-divider">/</span><div class="stat-value-item"><span id="encumbrance-threshold" class="stat-value">0</span><span class="stat-sublabel">Threshold</span></div></div></div>
+                </section>
+                <section class="weapons-section">
+                    <h2>Equipped Armor</h2>
+                    <div id="equipped-armor-display"><p>No armor equipped.</p></div>
+                </section>
+                <div class="inventory-section">
+                    <h2>Inventory</h2>
+                    <div id="inventory-list"></div>
+                </div>
+            </div>
+
+            <div id="tab-details" class="tab-content">
+                 <section class="details-section">
+                    <h2>Appearance</h2>
+                    <textarea id="appearance-details" class="details-textarea" placeholder="Describe your character's appearance..."></textarea>
+                </section>
+                <section class="details-section">
+                    <h2>Backstory</h2>
+                    <textarea id="backstory-details" class="details-textarea" placeholder="Describe your character's backstory..."></textarea>
+                </section>
+                 <section class="details-section">
+                    <h2>Notes</h2>
+                    <textarea id="notes-details" class="details-textarea" placeholder="Additional notes..."></textarea>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="dice-pool-panel" class="panel">
+        <h2>Dice Pool</h2>
+        <p id="current-skill-display">Skill: Custom roll</p>
+        <div class="dice-inputs">
+            <div class="dice-input-group">
+                <label for="ability">Ability <span class="dice-symbol ability">◆</span></label>
+                <input type="number" id="ability" min="0" value="0">
+            </div>
+            <div class="dice-input-group">
+                <label for="proficiency">Proficiency <span class="dice-symbol proficiency">⬢</span></label>
+                <input type="number" id="proficiency" min="0" value="0">
+            </div>
+            <div class="dice-input-group">
+                <label for="boost">Boost <span class="dice-symbol boost">■</span></label>
+                <input type="number" id="boost" min="0" value="0">
+            </div>
+            <div class="dice-input-group">
+                <label for="difficulty">Difficulty <span class="dice-symbol difficulty">◆</span></label>
+                <input type="number" id="difficulty" min="0" value="0">
+            </div>
+            <div class="dice-input-group">
+                <label for="challenge">Challenge <span class="dice-symbol challenge">⬢</span></label>
+                <input type="number" id="challenge" min="0" value="0">
+            </div>
+            <div class="dice-input-group">
+                <label for="setback">Setback <span class="dice-symbol setback">■</span></label>
+                <input type="number" id="setback" min="0" value="0">
+            </div>
+        </div>
+        <button id="roll-dice-button">Roll Dice</button>
+        <button id="clear-pool-button" class="clear-button">Clear Pool</button>
+        <div class="results-section">
+            <h3>Results</h3>
+            <div id="dice-results">Click "Roll Dice" to see results.</div>
+        </div>
+        <div id="spend-symbols-section" class="spend-symbols-section" style="display: none;">
+            <h3>Spend Advantage/Triumph</h3>
+            <div id="remaining-symbols-display" class="remaining-symbols"></div>
+            <div id="ability-activation-buttons"></div>
+            <div id="custom-spend-options" class="custom-spend-container">
+                <input type="number" id="custom-advantage-spend" min="1" placeholder="Adv">
+                <button id="custom-advantage-btn">Spend Advantage</button>
+                <input type="number" id="custom-triumph-spend" min="1" placeholder="Tri">
+                <button id="custom-triumph-btn">Spend Triumph</button>
+            </div>
+        </div>
+        <div class="history-section">
+            <h3>History</h3>
+            <ul id="history-list">
+                <li>No roll history found.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="gear-panel" class="panel">
+        <div id="gear-list"></div>
+    </div>
+    <button id="toggle-pool-panel" class="panel-toggle pool-toggle">Pool</button>
+    <button id="toggle-gear-panel" class="panel-toggle gear-toggle">Gear</button>
+    <div id="critical-injury-modal" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h2 id="crit-modal-title">Critical Injury!</h2>
+            <div id="crit-modal-body"></div>
+            <button id="crit-modal-close" class="nav-button">Acknowledge</button>
+        </div>
+    </div>
+    <div id="ability-tooltip" class="ability-tooltip"></div>
+    
+    <script type="module" src="main.js"></script>
+</body>
+</html>

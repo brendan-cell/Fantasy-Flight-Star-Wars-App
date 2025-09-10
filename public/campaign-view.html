@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign View</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-left-actions">
+        <button id="back-to-campaign-hub-btn" class="nav-button">&larr; Back to Hubs</button>
+    </div>
+    <div class="top-right-actions">
+        <button id="my-account-btn" class="nav-button">My Account</button>
+        <button id="logout-button" class="nav-button logout-button">Log Out</button>
+    </div>
+
+    <div class="campaign-container">
+        <h1 id="campaign-view-title">Campaign Details</h1>
+        <p>Campaign ID: <span id="campaign-id-display"></span></p>
+        
+        <div class="character-hub-actions">
+            <a href="#" id="create-new-character-link" class="nav-button">Create New Character</a>
+        </div>
+        
+        <hr>
+        
+        <h2>Characters</h2>
+        <div id="campaign-character-list" class="character-grid">
+            <p>No characters in this campaign yet.</p>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

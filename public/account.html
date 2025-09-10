@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-left-actions">
+        <button id="back-to-hub-btn" class="nav-button">&larr; Back to Hub</button>
+    </div>
+    <div class="top-right-actions">
+        <button id="logout-button" class="nav-button logout-button">Log Out</button>
+    </div>
+
+    <div class="account-container">
+        <h1>My Account</h1>
+        <p class="hub-subtitle">Manage your login details below.</p>
+
+        <div id="account-message"></div>
+
+        <div class="account-card">
+            <h2>Update Email</h2>
+            <div class="form-inputs">
+                <input type="email" id="new-email-input" placeholder="Enter new email address">
+                <button id="update-email-btn" class="nav-button">Update Email</button>
+            </div>
+        </div>
+
+        <div class="account-card">
+            <h2>Update Password</h2>
+            <div class="form-inputs">
+                <input type="password" id="new-password-input" placeholder="Enter new password">
+                <button id="update-password-btn" class="nav-button">Update Password</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

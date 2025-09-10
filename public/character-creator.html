@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Creator - Edge of the Empire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="creator-background">
+    
+        <div class="top-left-actions">
+            <button id="creator-back-to-hub-btn" class="nav-button">&larr; Back to Hub</button>
+        </div>
+        <div class="top-right-actions">
+            <button id="my-account-btn" class="nav-button">My Account</button>
+            <button id="logout-button" class="nav-button logout-button">Log Out</button>
+        </div>
+
+        <div class="creator-container">
+        <h1>New Character</h1>
+        <div class="wizard-progress-bar">
+            <div class="progress-step active" data-step="1">Obligation</div>
+            <div class="progress-step" data-step="2">Species</div>
+            <div class="progress-step" data-step="3">Career</div>
+            <div class="progress-step" data-step="4">Specialization</div>
+            <div class="progress-step" data-step="5">Career Skills</div>
+            <div class="progress-step" data-step="6">Spend XP</div>
+            <div class="progress-step" data-step="7">Starting Gear</div>
+            <div class="progress-step" data-step="8">Summary</div>
+        </div>
+
+        <div class="wizard-navigation">
+            <button id="prev-step-btn" class="nav-button">Previous</button>
+            <button id="next-step-btn" class="nav-button">Next</button>
+        </div>
+
+        <div id="character-creator-wizard">
+                <!-- STEP 1: OBLIGATION -->
+                <div class="wizard-step active" data-step="1">
+                    <h2>Determine Obligation</h2>
+                    <div class="master-detail-layout">
+                        <div class="master-list-panel" id="obligation-list-panel">
+                            <!-- JS will populate tabs here -->
+                        </div>
+                        <div class="detail-panel" id="obligation-detail-panel">
+                            <!-- JS will populate content for the selected tab here -->
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- STEP 2: SPECIES -->
+                <div class="wizard-step" data-step="2">
+                    <h2>Choose your Species</h2>
+                    <div class="search-and-filter-container">
+                        <input type="text" id="species-search-input" placeholder="Search species name, stats, abilities...">
+                        <select id="species-filter-select">
+                            <option value="alpha-asc">Sort Alphabetically (A-Z)</option>
+                            <option value="xp-desc">Starting XP (High-Low)</option>
+                            <option value="xp-asc">Starting XP (Low-High)</option>
+                            <option value="wound-desc">Wound Threshold (High-Low)</option>
+                            <option value="wound-asc">Wound Threshold (Low-High)</option>
+                            <option value="strain-desc">Strain Threshold (High-Low)</option>
+                            <option value="strain-asc">Strain Threshold (Low-High)</option>
+                            <option value="brawn-desc">Brawn (High-Low)</option>
+                            <option value="brawn-asc">Brawn (Low-High)</option>
+                            <option value="agility-desc">Agility (High-Low)</option>
+                            <option value="agility-asc">Agility (Low-High)</option>
+                            <option value="intellect-desc">Intellect (High-Low)</option>
+                            <option value="intellect-asc">Intellect (Low-High)</option>
+                            <option value="cunning-desc">Cunning (High-Low)</option>
+                            <option value="cunning-asc">Cunning (Low-High)</option>
+                            <option value="willpower-desc">Willpower (High-Low)</option>
+                            <option value="willpower-asc">Willpower (Low-High)</option>
+                            <option value="presence-desc">Presence (High-Low)</option>
+                            <option value="presence-asc">Presence (Low-High)</option>
+                        </select>
+                    </div>                    
+                    <div class="master-detail-layout">
+                        <div class="master-list-panel" id="species-list-panel">
+                            <!-- JS will populate this list -->
+                        </div>
+                        <div class="detail-panel" id="species-detail-panel">
+                            <!-- JS will populate this detail view -->
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- STEP 3: CAREER -->
+                <div class="wizard-step" data-step="3">
+                    <h2>Choose your Career</h2>
+                    <div class="master-detail-layout">
+                        <div class="master-list-panel" id="career-list-panel">
+                            <!-- JS will populate this list -->
+                        </div>
+                        <div class="detail-panel" id="career-detail-panel">
+                            <!-- JS will populate this detail view -->
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- STEP 4: SPECIALIZATION -->
+                <div class="wizard-step" data-step="4">
+                    <h2>Choose your Specialization</h2>
+                    <div class="master-detail-layout">
+                        <div class="master-list-panel" id="specialization-list-panel">
+                            <!-- JS will populate this list -->
+                        </div>
+                        <div class="detail-panel" id="specialization-detail-panel">
+                            <!-- JS will populate this detail view -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- STEP 5: CAREER SKILLS -->
+                <div class="wizard-step" data-step="5">
+                    <h2>Select Free Skill Ranks</h2>
+                    <div class="master-detail-layout">
+                        <div class="master-list-panel" id="free-skills-list-panel">
+                            <!-- JS will populate tabs for Career and Specialization skills -->
+                        </div>
+                        <div class="detail-panel" id="free-skills-detail-panel">
+                            <!-- JS will populate the checkboxes for the selected skill group -->
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- STEP 6: SPEND XP -->
+                <div class="wizard-step" data-step="6">
+                    <h2>Spend Starting XP</h2>
+                    <div class="master-detail-layout">
+                        <div class="master-list-panel" id="xp-list-panel">
+                            <!-- JS will populate tabs for Characteristics, Skills, and Talents -->
+                        </div>
+                        <div class="detail-panel" id="xp-detail-panel">
+                            <!-- JS will populate the controls for the selected category -->
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- STEP 7: STARTING GEAR -->
+                <div class="wizard-step" data-step="7">
+                    <h2>Purchase Starting Gear</h2>
+                    <div class="master-detail-layout">
+                        <div class="master-list-panel" id="gear-category-list-panel">
+                            <!-- JS will populate with gear categories -->
+                        </div>
+                        <div class="detail-panel" id="gear-detail-panel">
+                            <!-- JS will populate the gear browser and summary -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- STEP 8: SUMMARY -->
+                <div class="wizard-step" data-step="8"> 
+                    <h2>Character Summary</h2>
+                    <div id="character-summary">
+                        <!-- JS will populate the final summary here -->
+                    </div>
+                </div>
+            </div>
+
+    <script type="module" src="main.js"></script>
+
+    <script type="module" src="main.js"></script>
+    <div id="ability-tooltip" class="ability-tooltip"></div>
+</body>
+</html>

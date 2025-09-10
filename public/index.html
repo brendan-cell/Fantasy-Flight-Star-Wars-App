@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Character App - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Star Wars Character App</h1>
+
+        <section class="auth-section">
+            <div class="auth-flipper">
+                <div class="login-form-container">
+                    <form id="login-form">
+                        <h3>Log In</h3>
+                        <div class="form-inputs">
+                            <input type="email" id="email-login" placeholder="Email" autocomplete="username">
+                            <input type="password" id="password-login" placeholder="Password" autocomplete="current-password">
+                        </div>
+                        <button type="button" id="login-button">Log In</button>
+                        <p class="auth-toggle-link">Don't have an account? <a href="#" id="show-signup-link">Create one</a></p>
+                    </form>
+                </div>
+
+                <div class="signup-form-container">
+                    <form id="signup-form">
+                        <h3>Create Account</h3>
+                        <div class="form-inputs">
+                            <input type="email" id="email-signup" placeholder="Email" required autocomplete="username">
+                            <input type="password" id="password-signup" placeholder="Password" required autocomplete="new-password">
+                        </div>
+                        <button type="button" id="signup-button">Sign Up</button>
+                        <p class="auth-toggle-link">Already have an account? <a href="#" id="show-login-link">Log in</a></p>
+                    </form>
+                </div>
+            </div>
+            <div id="auth-message" style="margin-top: 10px; font-weight: bold; min-height: 1.2em;"></div>
+        </section>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
